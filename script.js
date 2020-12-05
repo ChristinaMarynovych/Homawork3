@@ -1,8 +1,14 @@
 //функція 1
 function getMaxDigit(number) {
-    number = Array.from(String(number), Number);
-    return Math.max(...number);
-  }
+  let Array = String(number).split('');
+  let answer = 0;
+  for (let maxDigit of Array) {
+      if (Number(maxDigit) > answer) {
+          answer = Number(maxDigit)
+      };
+  };
+  return answer;
+}
 //    console.log(getMaxDigit(prompt('input number')));
 
 //функція 3
@@ -25,7 +31,7 @@ function randomInteger(min, max) {
 //   console.log(randomInteger(+prompt('input first number'), +prompt('input second number')));
 
 // функція 8
-function randomPass(length) {
+function randomPass(length = 8) {
     let password = '';
     let symbols = '0123456789';
     for (let i = 0; i < length; i++){
